@@ -1,5 +1,6 @@
-# project1_starter.py
-# RPG Character Module – Autograder-Compatible Starter
+#"This code was written with partial assistance from an AI tool (approximately 20-25%).
+#The AI helped with structuring functions, implementing file operations, and generating basic RPG character logic.
+#All logic, testing, and final integration were reviewed and adjusted by me to ensure correctness and meet assignment requirements.
 
 # Character classes and modifiers
 CLASS_MODIFIERS = {
