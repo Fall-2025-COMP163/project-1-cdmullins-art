@@ -28,7 +28,7 @@ def create_character(name, character_class):
         "health" : health,
         "gold" : gold
 
-    {
+    }
     return character
     
 
