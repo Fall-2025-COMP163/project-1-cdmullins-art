@@ -78,14 +78,15 @@ def save_character(character, filename):
         return False
 
 
-    file = open(filename, 'w')
-    file.write(f"Character Name: {character['name'].strip()}\n")
-    file.write(f"Class: {character['class']}\n")
-    file.write(f"Level: {character['level']}\n")
-    file.write(f"Strength: {character['strength']}\n")
-    file.write(f"Magic: {character['magic']}\n")
-    file.write(f"Health: {character['health']}\n")
-    file.write(f"Gold: {character['gold']}\n")
+    with open(filename, 'w', encoding="utf-8") as file:
+        
+        file.write(f"Character Name: {character['name'].strip()}\n")
+        file.write(f"Class: {character['class']}\n")
+        file.write(f"Level: {character['level']}\n")
+        file.write(f"Strength: {character['strength']}\n")
+        file.write(f"Magic: {character['magic']}\n")
+        file.write(f"Health: {character['health']}\n")
+        file.write(f"Gold: {character['gold']}\n")
 
     return True
 
@@ -98,9 +99,10 @@ def load_character(filename):
     import os
     if not os.path.exists(filename):
         return None
-    file = open(filename, "r")
-    lines = file.readlines()
-    file.close()
+    with open(filename, "r", encoding="utf-8"):
+        
+        lines = file.readlines()
+        file.close()
 
     data = {}
     for line in lines:
@@ -110,7 +112,7 @@ def load_character(filename):
 
 
     character = {
-        "name": data.get("Character Name", "").strip,
+        "name": data.get("Character Name", "").strip(),
         "class": data.get("Class", ""),
         "level": int(data.get("Level", "1")),
         "strength": int(data.get("Strength", "0")),
