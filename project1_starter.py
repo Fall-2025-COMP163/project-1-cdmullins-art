@@ -79,7 +79,7 @@ def save_character(character, filename):
 
 
     file = open(filename, 'w')
-    file.write(f"Character Name: {character['name']}\n")
+    file.write(f"Character Name: {character['name'].strip()}\n")
     file.write(f"Class: {character['class']}\n")
     file.write(f"Level: {character['level']}\n")
     file.write(f"Strength: {character['strength']}\n")
@@ -106,11 +106,11 @@ def load_character(filename):
     for line in lines:
         if ":" in line:
             key, value = line.strip().split(":", 1)
-            data[key] = value
+            data[key] = value.strip()
 
 
     character = {
-        "name": data.get("Character Name", ""),
+        "name": data.get("Character Name", "").strip,
         "class": data.get("Class", ""),
         "level": int(data.get("Level", "1")),
         "strength": int(data.get("Strength", "0")),
