@@ -61,7 +61,7 @@ def calculate_stats(character_class, level):
         strength = 5 + (level * 2)
         magic = 5 + (level * 2)
         health = 50 + (level * 2)
-    retutn ( strength, magic, health)
+    return ( strength, magic, health)
 
 def save_character(character, filename):
     """
