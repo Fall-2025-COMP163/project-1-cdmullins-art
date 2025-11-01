@@ -78,7 +78,7 @@ def save_character(character, filename):
         return False
 
 
-    file = open(filename, 'w")
+    file = open(filename, "w")
     file.write(f"Character Name: {character['name']}\n")
     file.write(f"Class: {character['class']}\n")
     file.write(f"Level: {character['level']}\n")
