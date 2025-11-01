@@ -78,7 +78,7 @@ def save_character(character, filename):
         return False
 
 
-    file = open(filename, "w")
+    file = open(filename, 'w')
     file.write(f"Character Name: {character['name']}\n")
     file.write(f"Class: {character['class']}\n")
     file.write(f"Level: {character['level']}\n")
@@ -98,8 +98,7 @@ def load_character(filename):
     import os
     if not os.path.exists(filename):
         return None
-
-    file = open(filename, "r")
+    with open(filename, "r")
     lines = file.readlines()
     file.close()
 
@@ -148,7 +147,7 @@ def level_up(character):
     character["level"] += 1
     health, strength, magic = calculate_stats(character["class"], character["level"])
     character["health"] = health
-    chracter["strength"] = strength
+    character["strength"] = strength
     character["magic"] = magic
 
 # Main program area (optional - for testing your functions)
